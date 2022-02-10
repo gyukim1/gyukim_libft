@@ -26,6 +26,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!res)
 		return (NULL);
 	ft_strlcpy(res, s1, s1_len + 1);
-	ft_strlcat(res, s2, s2_len + 1);
+	ft_strlcat(res, s2, s1_len + s2_len + 1);
 	return (res);
 }
