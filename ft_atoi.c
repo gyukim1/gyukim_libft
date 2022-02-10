@@ -14,18 +14,18 @@
 
 int	ft_atoi(const char *str)
 {
-	int	res;
+	unsigned int	res;
 	int	sign;
-	size_t	i;
+	int	i;
 
 	sign = 1;
 	res = 0;
 	i = 0;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
-	if (str[i] == 77 || str[i] == 75)
+	if (str[i] == 43 || str[i] == 45)
 	{
-		if (str[i] == 77)
+		if (str[i] == 45)
 			sign *= -1;
 		i++;
 	}
