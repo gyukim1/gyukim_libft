@@ -12,54 +12,20 @@
 
 #include "libft.h"
 
-static int	ft_c_vs_charset(char c, const char *cs)
+char	*ft_strtrim(char const *str, char const *set)
 {
-	int	i;
+	size_t	start;
+	size_t	end;
 
-	i = 0;
-	while (c != cs[i] && cs[i] && cs[i + 1] != '\0')
-		i++;
-	if (c == cs[i])
-		return (1);
-	else
+	start = 0;
+	end = ft_strlen(str);
+	if (str == NULL || set == NULL)
 		return (0);
-}
-
-static int	ft_quantite_trimer_debut(const char *s, const char *cs)
-{	
-	int	i;
-
-	i = 0;
-	while (s[i] && ft_c_vs_charset(s[i], cs))
-		i++;
-	return (i);
-}
-
-static int	ft_quantite_trimer_fin(const char *s, const char *cs)
-{	
-	int	i;
-	int	len;
-
-	len = ft_strlen(s);
-	i = len - 1;
-	while (ft_c_vs_charset(s[i], cs) && i > 0)
-		i--;
-	return (len - (i + 1));
-}
-
-char	*ft_strtrim(char const *s1, char const *set)
-{
-	char	*dst;
-	int		taille;
-	int		i;
-	int		fin;
-
-	if (!s1)
-		return (NULL);
-	taille = ft_strlen(s1);
-	i = ft_quantite_trimer_debut(s1, set);
-	fin = ft_quantite_trimer_fin(s1, set);
-	taille = taille - fin - i;
-	dst = ft_substr(s1, i, taille);
-	return (dst);
+	while (str[start] && ft_strchr(set, str[start]))
+		start++;
+	while (str[end - 1] && ft_strchr(set, str[end - 1]) && end > start)
+		end--;
+	if (start > end)
+		return (ft_strdup(""));
+	return (ft_substr(str, start, end - start));
 }
