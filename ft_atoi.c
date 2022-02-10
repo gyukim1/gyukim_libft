@@ -17,24 +17,22 @@ int	ft_atoi(const char *str)
 	unsigned long long	res;
 	unsigned long long	max;
 	int					sign;
-	int					i;
 
 	sign = 1;
 	res = 0;
-	i = 0;
 	max = 9223372036854775807;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == 43 || str[i] == 45)
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str++;
+	if (*str == 43 || *str == 45)
 	{
-		if (str[i] == 45)
+		if (*str == 45)
 			sign *= -1;
-		i++;
+		str++;
 	}
-	while (str[i] >= 48 && str[i] <= 57)
+	while (*str >= 48 && *str <= 57)
 	{
-		res = (res * 10) + (str[i] - 48);
-		i++;
+		res = (res * 10) + (*str - 48);
+		str++;
 	}
 	if (res > max && sign == 1)
 		return (-1);
