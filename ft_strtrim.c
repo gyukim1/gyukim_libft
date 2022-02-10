@@ -19,7 +19,7 @@ char	*ft_strtrim(char const *str, char const *set)
 
 	start = 0;
 	end = ft_strlen(str);
-	if (!str || !set)
+	if (str == NULL || set == NULL)
 		return (0);
 	while (str[start] && ft_strchr(set, str[start]))
 		start++;
