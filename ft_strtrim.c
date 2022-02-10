@@ -25,5 +25,7 @@ char	*ft_strtrim(char const *str, char const *set)
 		start++;
 	while (str[end - 1] && ft_strchr(set, str[end - 1]) && end > start)
 		end--;
+	if (start > end)
+		return (ft_strdup(""));
 	return (ft_substr(str, start, end - start));
 }
