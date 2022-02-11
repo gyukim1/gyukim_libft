@@ -13,12 +13,8 @@
 #ifndef LIBFT_H
 # define  LIBFT_H
 
-# include <stddef.h>
-# include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <ctype.h>
-# include <stdio.h>
 
 int			ft_atoi(const char *str);
 int			ft_isalnum(int c);
