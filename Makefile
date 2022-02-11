@@ -65,6 +65,6 @@ fclean : clean					//오브젝트파일과 라이브러리 파일 삭제
 	$(RM) $(NAME)
 
 %.o : %.c					//.c파일을 .o파일로 컴파일
-	$(CC) $(CFLAG) -c $< -o $@
+	$(CC) $(CFLAG) -c $< -o $@		//$< 현재의 목표파일보다 더 최근에 갱신된 파일 이름
 
 re : fclean all					//fclean후 all타겟 삭제
