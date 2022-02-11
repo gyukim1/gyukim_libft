@@ -40,3 +40,4 @@ int	ft_atoi(const char *str)
 		return (0);
 	return (res * sign);
 }
+//unsigned long long = long long의 max, min 처리
