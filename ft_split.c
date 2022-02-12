@@ -12,25 +12,25 @@
 
 #include "libft.h"
 
-static char	**do_free(char **s)
+static char	**ft_do_free(char **s)
 {
 	size_t	i;
 
 	if (s == 0)
 		return (0);
 	i = 0;
-	while (s[i])			//1차원배열 프리
+	while (s[i])
 	{
 		free(s[i]);
 		s[i] = NULL;
 		i++;
 	}
-	free(s);			//2차원배열 프리
+	free(s);
 	s = NULL;
 	return (NULL);
 }
 
-static char	**do_split(char **str, char const *s, char c, size_t cnt)
+static char	**ft_do_split(char **str, char const *s, char c, size_t cnt)
 {
 	size_t	i;
 	size_t	j;
@@ -47,7 +47,7 @@ static char	**do_split(char **str, char const *s, char c, size_t cnt)
 				next++;
 			str[j] = ft_substr(s, i, next - i);
 			if (!str[j])
-				return (do_free(str));
+				return (ft_do_free(str));
 			j++;
 			i = next;				
 		}
@@ -97,5 +97,5 @@ char	**ft_split(char const *s, char c)
 		str[word_cnt] = 0;
 		return (str);
 	}
-	return (do_split(str, s, c, word_cnt));
+	return (ft_do_split(str, s, c, word_cnt));
 }
