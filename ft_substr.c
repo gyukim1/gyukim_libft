@@ -12,19 +12,19 @@
 
 #include "libft.h"
 
-char	*ft_substr(char const *str, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*new_str;
 
 	if (!str)
 		return (0);
-	if (ft_strlen(str) < len)
-		len = ft_strlen(str);
-	if (start >= ft_strlen(str))
+	if (ft_strlen(s) < len)
+		len = ft_strlen(s);
+	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
 	new_str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!new_str)
 		return (NULL);
-	strlcpy(new_str, str + start, len + 1);
+	strlcpy(new_str, s + start, len + 1);
 	return (new_str);
 }
