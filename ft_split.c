@@ -49,7 +49,7 @@ static char	**ft_do_split(char **str, char const *s, char c, size_t cnt)
 			if (!str[j])
 				return (ft_do_free(str));
 			j++;
-			i = next;				
+			i = next;
 		}
 		else
 			i++;
