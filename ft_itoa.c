@@ -16,7 +16,7 @@ size_t	check_len(int n)
 {
 	size_t	nb;
 
-	nb = ;
+	nb = 0;
 	if (n == 0)
 		return (1);
 	if (n < 0)
