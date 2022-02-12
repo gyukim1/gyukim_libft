@@ -14,7 +14,7 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (!s || fd < 0)
+	if (fd < 0)
 		return ;
 	write(fd, &c, 1);
 }
