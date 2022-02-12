@@ -68,3 +68,5 @@ fclean : clean					//오브젝트파일과 라이브러리 파일 삭제
 	$(CC) $(CFLAG) -c $< -o $@		//$< 현재의 목표파일보다 더 최근에 갱신된 파일 이름
 
 re : fclean all					//fclean후 all타겟 삭제
+
+.PHONY: re clean fclean all
