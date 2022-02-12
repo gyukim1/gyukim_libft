@@ -30,7 +30,7 @@ int			ft_toupper(int ch);
 int			ft_tolower(int ch);
 
 void		*ft_memchr(const void *s, int c, size_t n);
-void		ft_bzero(void *ptr, size_t n);
+void		ft_bzero(void *dest, size_t n);
 void		*ft_memmove(void *dest, const void *src, size_t n);
 void		*ft_memset(void *s, int c, size_t n);
 void		*ft_memcpy(void *dest, const void *src, size_t n);
@@ -47,7 +47,7 @@ char		*ft_strcpy(char *dest, char *src);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strchr(char const *str, int c);
 char		*ft_strrchr(const char *str, int ch);
-char		*ft_strnstr(const char *str, const char *substr, size_t len);
+char		*ft_strnstr(const char *big, const char *little, size_t len);
 char		*ft_strtrim(char const *str, char const *set);
 char		*ft_strjoin(char const *str, char const *s2);
 char		*ft_strdup(const char *str);
