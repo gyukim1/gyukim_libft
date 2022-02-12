@@ -49,7 +49,7 @@ char	*ft_itoa(int n)
 		str[0] = '0';
 	str[len] = 0;
 	len -= 1;
-	while (value)
+	while (tmp)
 	{
 		str[len] = tmp % 10 + '0';
 		tmp /= 10;
