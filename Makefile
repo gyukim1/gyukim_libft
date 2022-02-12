@@ -64,5 +64,3 @@ fclean : clean
 	$(CC) $(CFLAG) -c $< -o $@
 
 re : fclean all
-
-.PHONY: re clean fclean all
