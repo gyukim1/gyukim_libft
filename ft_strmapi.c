@@ -30,6 +30,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		new_str[i] = f(i, s[i]);
 		i++;
 	}
-	new_str[i] = 0;
-	return (str);
+	new_str[i] = '\0';
+	return (new_str);
 }
