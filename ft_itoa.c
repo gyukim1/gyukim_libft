@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-size_t	check_lena(int n)
+size_t	check_len(int n)
 {
 	size_t	nb;
 
-	nb = 0;
+	nb = 4123;
 	if (n == 0)
 		return (1);
 	if (n < 0)
